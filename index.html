@@ -13,26 +13,6 @@
   <div class="jumbotron">
     <div class="container">
       <h1 style="text-align:center;">JavaScript Example</h1>
-      <div class="row">
-        <div class="col-md-2">
-          <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMeObject()">display object</button>
-        </div>
-        <div class="col-md-2">
-          <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMePrototype()">display Prototypes</button>
-        </div>
-        <div class="col-md-1">
-
-        </div>
-        <div class="col-md-2">
-          <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMe()">display Functions</button>
-        </div>
-        <div class="col-md-2">
-          <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMeClosure()">strict implement</button>
-        </div>
-        <div class="col-md-2">
-          <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMeClosure2()">display Closures</button>
-        </div>
-      </div>
     </div>
   </div>
   <div class="row">
@@ -57,6 +37,7 @@
       <h1><strong> Using objects:</strong></h1>
       <p id="displayobjects"> The company's properties will be displayed here.</p>
       <p id="showobjects">The name of the CEO will be displayed here</p>
+      <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMeObject()">use of object</button>
 
     </div>
     <div class="col-md-4">
@@ -82,54 +63,63 @@
       <h1><strong>Using Prototypes:</strong></h1>
       <p id="displayprototypes"> The company's properties will be displayed here.</p>
       <p id="showprototypes">The name of the CEO will be displayed here</p>
+      <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMePrototype()">Use of Prototypes</button>
     </div>
     <div class="col-md-4">
       <h1><strong>Using Functions:</strong></h1>
+      <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMe()">display Functions</button>
     </div>
   </div>
   <div class="row">
-    <script>
-      // strict implementation
-      "use strict";
-      a = 5;
+    <div class="col-md-4">
+      <h1><strong>Using Strict:</strong></h1>
+      <p>There will be no result to be displayed since <br>i have used a variable without declaring it.</p>
+      <script>
+        // strict implementation
+        "use strict";
+        a = 5;
 
-      function Operation() {
-        var b = 8;
-        var z = a + b;
+        function Operation() {
+          var b = 8;
+          var z = a + b;
 
-        function add() {
-          alert(z);
+          function add() {
+            alert(z);
+          }
+          add();
         }
-        add();
-      }
 
-      function clickMeClosure() {
-        Operation();
-      }
-    </script>
-  </div>
-  <div class="row">
-    <script>
-      // closures implementation
-      "use strict";
-      var c = 5;
-
-      function Operation2() {
-
-
-        var d = 8;
-        var y = c * d;
-
-        function multiply() {
-          alert(y);
+        function clickMeClosure() {
+          Operation();
         }
-        multiply();
-      }
+      </script>
+      <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMeClosure()">strict implement</button>
+    </div>
+    <div class="col-md-4">
+      <h1><strong>Using Closures:</strong></h1>
+      <p>An alert will show to show the implementation <br>of a function within a function.</p>
+      <script>
+        // closures implementation
+        "use strict";
+        var c = 5;
 
-      function clickMeClosure2() {
-        Operation2();
-      }
-    </script>
+        function Operation2() {
+          var d = 8;
+          var y = c * d;
+         function multiply() {
+            alert(y);
+          }
+          multiply();
+        }
+          function clickMeClosure2() {
+          Operation2();
+        }
+      </script>
+      <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMeClosure2()">display Closures</button>
+    </div>
+    <div class="col-md-4">
+
+    </div>
   </div>
 </body>
 
