@@ -68,6 +68,28 @@
     <div class="col-md-4">
       <h1><strong>Using Functions:</strong></h1>
       <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMe()">display Functions</button>
+      <p id="displayfunction">An implementation of a function</p>
+      <script>
+      function Company(name, worth, location, ceo) {
+        this.name = name;
+        this.worth = worth;
+        this.location = location;
+        this.ceo = ceo;
+        this.profile = function() {
+          return this.name + " " + "is worth:" + " " + this.worth + " " + "and is located in" + " " + this.location + " " + "and the CEO is called" + " " + this.ceo;
+        };
+      }
+      Company.prototype.vision = "impacting the world";
+      var company1 = new Company("KURA", "200 billion", "Valleyroad", "William chalo");
+      var company2 = new Company("Safaricom", "600 billion", "Nairobi", "Bob collymore");
+
+      function clickMe() {
+        document.getElementById('displayfunction').innerHTML = company1.name + " " + company1.vision;
+      }
+
+
+      </script>
+
     </div>
   </div>
   <div class="row">
@@ -109,7 +131,7 @@
          function multiply() {
             alert(y);
           }
-          multiply();
+          multiply();//invokes a function
         }
           function clickMeClosure2() {
           Operation2();
