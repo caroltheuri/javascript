@@ -5,9 +5,8 @@
   <meta charset="utf-8">
   <title>JavaScript</title>
   <link rel="stylesheet" href="css\bootstrap.min.css">
-  <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="javascript\bootstrap.min.js"></script>
-  <script src="javascript\jquery-3.2.1.min.js"></script>
+
 </head>
 
 <body>
@@ -16,10 +15,10 @@
       <h1 style="text-align:center;">JavaScript Example</h1>
        <div class="row">
          <div class="col-md-3">
-           <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMe()">Click to display object</button>
+           <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMeObject()">Click to display object</button>
          </div>
          <div class="col-md-3">
-           <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMe()">Click to display Prototypes</button>
+           <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMePrototype()">Click to display Prototypes</button>
          </div>
          <div class="col-md-3">
             <button type="button" name="button" class="btn btn-primary btn-lg" onclick="clickMe()">Click to display Functions</button>
@@ -39,14 +38,14 @@
         location: "Westlands",
         business: "Investments",
         profile: function() {
-          return this.name + " " + "is worth:" + " " + this.worth + " " + "and is located in" + " " + this.location + " " + "and the CEO is called" + " " + this.ceo;
+          return this.name + " " + "is worth: " + this.worth + " " + "and is located in " + this.location + " " + "and the CEO is called" + " " + this.ceo;
         }
       };
 
-      function clickMe() {
+      function clickMeObject() {
         company.ceo = "Edwin Dande";
-        document.getElementById('display').innerHTML = "The name of the company i work for is" + " " + company.name + "and it is located in " + company.location;
-        document.getElementById('show').innerHTML = company.profile();
+        document.getElementById('displayobjects').innerHTML = "The name of the company i work for is " + company.name + "  and it is located in " + company.location;
+        document.getElementById('showobjects').innerHTML = company.profile();
       }
     </script>
     <h1><strong> Using objects:</strong></h1>
@@ -66,8 +65,8 @@
       Company.prototype.vision="impacting the world";
       var company1=new Company("KURA","200 billion", "Valleyroad", "William chalo");
       var company2=new Company("Safaricom","600 billion", "Nairobi", "Bob collymore");
-      function clickMe() {
-        document.getElementById('displayprototypes').innerHTML =company1.name+ " " + company.vision;
+      function clickMePrototype() {
+        document.getElementById('displayprototypes').innerHTML =company1.name+ " " + company1.vision;
         document.getElementById('showprototypes').innerHTML = company2.profile();
       }
       </script>
